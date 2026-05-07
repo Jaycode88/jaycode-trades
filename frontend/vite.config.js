@@ -12,6 +12,13 @@ export default defineConfig({
   build: {
     outDir: path.resolve(__dirname, '../staticfiles/dist'),
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        entryFileNames: 'assets/index.js',
+        chunkFileNames: 'assets/index.js',
+        assetFileNames: 'assets/index.[ext]',
+      }
+    }
   },
   server: {
     proxy: {
